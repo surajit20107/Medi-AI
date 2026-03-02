@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-medical-50: #f0f9ff;
+  --color-medical-100: #e0f2fe;
+  --color-medical-200: #bae6fd;
+  --color-medical-300: #7dd3fc;
+  --color-medical-400: #38bdf8;
+  --color-medical-500: #0ea5e9;
+  --color-medical-600: #0284c7;
+  --color-medical-700: #0369a1;
+  --color-medical-800: #075985;
+  --color-medical-900: #0c4a6e;
+
+  --animate-fade-in: fadeIn 0.3s ease-out;
+  --animate-slide-up: slideUp 0.3s ease-out;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  body {
+    @apply text-slate-900 bg-slate-50;
+  }
+}
+
+.prose pre {
+  @apply bg-slate-900 text-slate-100 p-4 rounded-lg my-4 overflow-x-auto border border-slate-700 shadow-inner;
+}
+
+.prose code {
+  @apply bg-slate-100 text-blue-600 px-1 py-0.5 rounded text-sm font-mono border border-slate-200;
+}
+
+.prose strong {
+  @apply text-slate-900 font-semibold;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed text-slate-700;
+}
+
+.prose ul, .prose ol {
+  @apply ml-4 mb-4 list-disc text-slate-700;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  @apply font-bold mt-6 mb-2 text-slate-900;
+}
